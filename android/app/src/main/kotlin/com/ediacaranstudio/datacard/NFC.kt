@@ -61,7 +61,7 @@ class TagReader(_db: DatabaseHelper) : NfcAdapter.ReaderCallback {
                 na.timeout = 3000
                 val model = getType(na)
                 Log.i("", model)
-                if(model == "KD-560") {
+                if(model == "KD-560" || model == "KD-567") {
                     val result = getBP(na)
                     if (result != null)
                         Channels.sendRecord(result)

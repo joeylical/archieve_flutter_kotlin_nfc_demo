@@ -23,18 +23,18 @@ object Channels {
         // 注册各通道的处理函数
         MethodChannel(view, CMDCHANNEL).setMethodCallHandler { call, result ->
             if (call.method == "deleteRecord") {
-                val rid = call.argument<Int>("rid")
+                val rid = call.argument<Int>("rid")!!
                 db.delResult(rid)
             } else if (call.method == "writeNfc") {
                 val info = NFCInfo(
-                        call.argument<String>("protocolVersion"),
-                        call.argument<String>("deviceName"),
-                        call.argument<String>("manufacturer"),
-                        call.argument<String>("model"),
-                        call.argument<String>("serialNumber"),
-                        call.argument<String>("hardwareVersion"),
-                        call.argument<String>("softwareVersion"),
-                        call.argument<String>("eeVersion")
+                        call.argument<String>("protocolVersion")!!,
+                        call.argument<String>("deviceName")!!,
+                        call.argument<String>("manufacturer")!!,
+                        call.argument<String>("model")!!,
+                        call.argument<String>("serialNumber")!!,
+                        call.argument<String>("hardwareVersion")!!,
+                        call.argument<String>("softwareVersion")!!,
+                        call.argument<String>("eeVersion")!!
                 )
                 nfc.setWriteMode(info)
             } else if (call.method == "cancelWrite") {

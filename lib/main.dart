@@ -348,7 +348,30 @@ class ResultDataItem extends StatelessWidget {
                           new FlatButton(
                             textColor: Colors.amber.shade500,
                             onPressed: () {
-                              rmRecord(resultData.rid);
+                              showDialog(
+                                  context: context,
+                                  barrierDismissible: false,
+                                  builder: (BuildContext context) {
+                                    return new AlertDialog(
+                                      title: new Text('确认删除？'),
+                                      actions: <Widget>[
+                                        new FlatButton(
+                                          child: new Text('否'),
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                        new FlatButton(
+                                          child: new Text('是'),
+                                          onPressed: () {
+                                            rmRecord(resultData.rid);
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                      ],
+                                    );
+                                  },
+                              );
                             },
                             child: const Icon(Icons.delete),
                           ),
