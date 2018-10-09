@@ -549,6 +549,10 @@ class _WritePage extends State<WritePage> {
                 labelText: "协议版本",
                 hintText: wInfo['protocolVersion'],
               ),
+              onChanged: (value) {
+                wInfo['protocolVersion'] = value;
+                FocusScope.of(context).requestFocus(focusName);
+              },
               onSubmitted: (value) {
                 wInfo['protocolVersion'] = value;
                 FocusScope.of(context).requestFocus(focusName);
@@ -563,6 +567,10 @@ class _WritePage extends State<WritePage> {
                 labelText: "名称",
                 hintText: wInfo['deviceName'],
               ),
+              onChanged: (value) {
+                wInfo['deviceName'] = value;
+                FocusScope.of(context).requestFocus(focusMa);
+              },
               onSubmitted: (value) {
                 wInfo['deviceName'] = value;
                 FocusScope.of(context).requestFocus(focusMa);
@@ -576,6 +584,10 @@ class _WritePage extends State<WritePage> {
               textInputAction: TextInputAction.next,
               decoration: new InputDecoration(
                   labelText: "生产商", hintText: wInfo['manufacturer']),
+              onChanged: (value) {
+                wInfo['manufacturer'] = value;
+                FocusScope.of(context).requestFocus(focusMd);
+              },
               onSubmitted: (value) {
                 wInfo['manufacturer'] = value;
                 FocusScope.of(context).requestFocus(focusMd);
@@ -588,6 +600,10 @@ class _WritePage extends State<WritePage> {
               textInputAction: TextInputAction.next,
               decoration: new InputDecoration(
                   labelText: "型号", hintText: wInfo['model']),
+              onChanged: (value) {
+                wInfo['model'] = value;
+                FocusScope.of(context).requestFocus(focusNo);
+              },
               onSubmitted: (value) {
                 wInfo['model'] = value;
                 FocusScope.of(context).requestFocus(focusNo);
@@ -602,6 +618,10 @@ class _WritePage extends State<WritePage> {
               focusNode: focusNo,
               decoration: new InputDecoration(
                   labelText: "序列号", hintText: wInfo['serialNumber']),
+              onChanged: (value) {
+                wInfo['serialNumber'] = value;
+                FocusScope.of(context).requestFocus(focusHV);
+              },
               onSubmitted: (value) {
                 wInfo['serialNumber'] = value;
                 FocusScope.of(context).requestFocus(focusHV);
@@ -616,6 +636,10 @@ class _WritePage extends State<WritePage> {
               focusNode: focusHV,
               decoration: new InputDecoration(
                   labelText: "硬件版本", hintText: wInfo['hardwareVersion']),
+              onChanged: (value) {
+                wInfo['hardwareVersion'] = value;
+                FocusScope.of(context).requestFocus(focusSV);
+              },
               onSubmitted: (value) {
                 wInfo['hardwareVersion'] = value;
                 FocusScope.of(context).requestFocus(focusSV);
@@ -630,6 +654,10 @@ class _WritePage extends State<WritePage> {
               focusNode: focusSV,
               decoration: new InputDecoration(
                   labelText: "软件版本", hintText: wInfo['softwareVersion']),
+              onChanged: (value) {
+                wInfo['softwareVersion'] = value;
+                FocusScope.of(context).requestFocus(focusEV);
+              },
               onSubmitted: (value) {
                 wInfo['softwareVersion'] = value;
                 FocusScope.of(context).requestFocus(focusEV);
@@ -643,6 +671,9 @@ class _WritePage extends State<WritePage> {
               focusNode: focusEV,
               decoration: new InputDecoration(
                   labelText: "EEPROM版本", hintText: wInfo['eeVersion']),
+              onChanged: (value) {
+                wInfo['eeVersion'] = value;
+              },
               onSubmitted: (value) {
                 wInfo['eeVersion'] = value;
               },

@@ -133,6 +133,10 @@ class TagWriter(info: NFCInfo) : NfcAdapter.ReaderCallback {
                 throw IOException()
             }
         }
+
+//        na.transceive(byteArrayOf(0xa2.toByte(), 0x70, 0x39, 0x38, 0x00, 0x00))
+//        na.transceive(byteArrayOf(0xa2.toByte(), 0x71, 0x31, 0x32, 0x35, 0x00))
+//        na.transceive(byteArrayOf(0xa2.toByte(), 0x72, 0x31, 0x33, 0x32, 0x00))
     }
 
     override fun onTagDiscovered(p0: Tag?) {
