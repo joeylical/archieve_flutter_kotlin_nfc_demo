@@ -36,7 +36,7 @@ class DatabaseHelper(ctx: Context) : ManagedSQLiteOpenHelper(ctx, "NFCDataCard",
 
     override fun onCreate(db: SQLiteDatabase?) {
         db?.createTable("Records", true,
-                "rid" to INTEGER + PRIMARY_KEY + UNIQUE + AUTOINCREMENT,
+                "rid" to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
                 "userName" to TEXT,
                 "time" to INTEGER,
                 "type" to TEXT,

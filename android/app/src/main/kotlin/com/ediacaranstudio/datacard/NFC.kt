@@ -21,8 +21,13 @@ class TagReader(_db: DatabaseHelper) : NfcAdapter.ReaderCallback {
     private fun getRawBP(na: NfcA, index: Int = 1): BloodPressure {
         val sendCmd = byteArrayOf(0x30, (0x6f + index).toByte())
         val temp = na.transceive(sendCmd)
+//        val sb = java.lang.StringBuilder()
+//        for(ch in temp) {
+//            sb.append(String.format("%02X", ch))
+//        }
+//        Channels.showMsg(sb.toString())
         return BloodPressure(
-                systolic = (temp[0].toInt() and 0xff) + 25,
+                systolic = (temp[0].toInt() and 0xff) + (temp[1].toInt() and 0xff) + 25,
                 diastolic = (temp[1].toInt() and 0xff) + 25,
                 pulse = (temp[2].toInt() and 0xff)
         )
