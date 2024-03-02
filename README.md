@@ -1,8 +1,3 @@
-# datacard
+An Android NFC demo written in flutter and kotlin.
 
-Data Card
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+Last updated in 2018, so it may not be built correctly.
